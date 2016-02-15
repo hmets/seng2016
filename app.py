@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import sys
-
+import math
 # Implementation of FizzBuzz v0.00
 
 # Version 1: if number is divisible by 3, print Fizz
@@ -10,7 +10,7 @@ import sys
 
 # Version 2: if number is prime, print "<number> is a prime" instead
 #            Take one argument,  and count up to it
-#test
+
 
 class FizzBuzz():
     def __init__(self):
@@ -23,15 +23,25 @@ class FizzBuzz():
 
     # Seems to give correct values. Tested with 1 and 2.
     def calc(self, i):
-        if i % 3 == 0 and i % 5 == 0:
-            print "FizzBuzz"
-        elif i % 3 == 0:
-            print "Fizz"
-        elif i % 5 == 0:
-            print "Buzz"
+        for j in range(2, i):
+            if i %j == 0:
+                break
         else:
-            print i
+           # return True
+            return "%d is a prime" % i
+
+        if (i % j) == 0:
+                if i % 3 == 0 and i % 5 == 0:
+                    return "FizzBuzz"
+                elif i % 3 == 0:
+                    return "Fizz"
+                elif i % 5 == 0:
+                    return "Buzz"
+
         return i
+
+
+
 
 
 
