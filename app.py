@@ -10,6 +10,7 @@ import sys
 
 # Version 2: if number is prime, print "<number> is a prime" instead
 #            Take one argument,  and count up to it
+#test
 
 class FizzBuzz():
     def __init__(self):
@@ -17,12 +18,22 @@ class FizzBuzz():
 
     # Run from 1 to "end". Maybe. Test fails for some reason
     def run(self, end, out=sys.stdout):
-        for i in range(0, end):
-            print >> out, self.calc(i)
+        for i in range(1, end + 1):
+              print >> out, self.calc(i)
 
     # Seems to give correct values. Tested with 1 and 2.
     def calc(self, i):
+        if i % 3 == 0 and i % 5 == 0:
+            print "FizzBuzz"
+        elif i % 3 == 0:
+            print "Fizz"
+        elif i % 5 == 0:
+            print "Buzz"
+        else:
+            print i
         return i
+
+
 
 if __name__ == "__main__":
     app = FizzBuzz()
